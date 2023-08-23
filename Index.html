@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semáforo</title>
+</head>
+<body>
+    <h1>Semáforo</h1>
+    <div id="semaforo">
+        <img src="verde.png" id="verde" class="luz">
+        <img src="amarillo.png" id="amarillo" class="luz">
+        <img src="rojo.png" id="rojo" class="luz">
+    </div>
+
+    <script>
+        const luces = document.querySelectorAll(".luz");
+        let index = 0;
+
+        function cambiarLuz() {
+            luces[index].style.display = "none"; // Oculta la luz actual
+            index = (index + 1) % luces.length; // Cambia al siguiente color
+            luces[index].style.display = "block"; // Muestra la nueva luz
+        }
+
+        // Iniciar el cambio automático de luz cada 2 segundos
+        setInterval(cambiarLuz, 2000);
+    </script>
+</body>
+</html>
